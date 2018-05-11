@@ -1,0 +1,51 @@
+<div id="input-container">
+    <mat-card class="" *ngIf="!isPlanningComplete">
+        <h1>Plan Your Search</h1>
+        <form class="grid-container" [formGroup]="inputForm" (ngSubmit)="onSubmit(inputForm.valid )">
+            <mat-form-field>
+                <mat-select (ngModelChange)="onPlanetChange($event)" matInput formControlName="planet" placeholder="Planet">
+                    <mat-option [value]="item" *ngFor="let item of (planetList | sortPlanets)">{{item.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="inputForm.get('planet').hasError('required')">Required</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select matInput formControlName="vehicle" placeholder="Vehicle" [disabled]="inputForm.get('planet').hasError('required')">
+                    <mat-option [value]="item" *ngFor="let item of sortedVehicleList">{{item.name}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="inputForm.get('vehicle').hasError('required')">Required</mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" [disabled]="!inputForm.valid">Add</button>
+        </form>
+    </mat-card>
+    <mat-card *ngIf="isPlanningComplete" class="launch-mission">
+        <h1>Launch Search Mission</h1>
+        <h2>Total Time: {{calculateTotalTime()}} min</h2>
+        <button mat-raised-button color="primary" (click)="findFalcone()">Find Queen AI Falcone</button>
+    </mat-card>
+</div>
+<div id="list-container">
+    <mat-card *ngFor="let item of searchList">
+        <div class="grid-container">
+            <span>
+                <img class="planet" src="../../../assets/planets/{{item.planet}}.jpg" alt="">
+            </span>
+            <span>
+                {{item.planet}}
+            </span>
+            <span>
+                <img class="vehicle" src="../../../assets/vehicles/{{item.vehicle}}.jpg" alt="">
+            </span>
+            <span>
+                {{item.vehicle}}
+            </span>
+            <span>
+                {{item.totalTime}} min
+            </span>
+            <span (click)="deleteSearchItem(item)" class="delete-icon">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+    </mat-card>
+</div>
+<div id="info-container">
+</div>

@@ -1,0 +1,20 @@
+<section id="result-container">
+    <div class="heading">
+        <ng-container *ngIf="status">
+            You Found Queen AI Falcone
+            <mat-card>
+                <span>
+                    Hiding on planet: {{planet}}
+                </span>
+                <span>
+                    <img src="../../../assets/planets/{{planet}}.jpg" alt="{{planet}}">
+                </span>
+            </mat-card>
+
+        </ng-container>
+        <ng-container *ngIf="!status">
+            <h1>Queen AI Falcone Escaped</h1>
+            <button mat-raised-button (click)="tryAgain()" color="primary">Try Again</button>
+        </ng-container>
+    </div>
+</section>

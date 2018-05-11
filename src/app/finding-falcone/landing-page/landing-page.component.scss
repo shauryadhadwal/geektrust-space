@@ -1,0 +1,70 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins.scss';
+#welcome-container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    margin-top: -$header-height;
+}
+
+#welcome-container .heading {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: 900;
+    font-size: 5em;
+    text-shadow: 0 0 8px hsl(43, 74%, 49%);
+    @include respond-to('small') {
+        font-size: 2.5em;
+    }
+    @include respond-to('mobile') {
+        font-size: 2.5em;
+    }
+    @include respond-to('tablet') {
+        font-size: 5em;
+    }
+}
+
+#welcome-container .buttons {
+    padding: 20px;
+}
+
+#welcome-container button {
+    background-color: $color-5;
+    color: hsl(0, 0%, 100%);
+    font-weight: 800;
+    font-size: 20px;
+    border-radius: 10px;
+    @mixin dimensions {
+        width: 150px;
+        height: 50px;
+        font-size: 12px;
+    }
+    @include respond-to('small') {
+        @include dimensions;
+    }
+    @include respond-to('mobile') {
+        @include dimensions;
+    }
+    @include respond-to('tablet') {
+        width: 250px;
+        height: 87px;
+        font-size: 20px;
+    }
+}
+
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 10em rgb(219, 177, 59);
+    }
+    50% {
+        box-shadow: 0 0 10em rgb(32, 2, 2);
+    }
+    100% {
+        box-shadow: 0 0 10em rgb(219, 177, 59);
+    }
+}
+
+.button-glow {
+    animation: glowing 1500ms infinite;
+}

@@ -1,0 +1,71 @@
+@import '../../../sass/variables.scss';
+@import '../../../sass/mixins.scss';
+#input-container,
+#list-container,
+#info-container {
+    width: 100%;
+    border-radius: 5px;
+    margin: 2em 0 1em 0;
+}
+
+#input-container .mat-card{
+    box-sizing: border-box;
+    padding:1em;
+    height: 160px;
+}
+
+#input-container .launch-mission h1, h2{
+        margin: 2px 0;
+}
+
+#input-container button{
+    height: 50px;
+}
+
+#input-container .mat-form-field{
+    @include respond-to('all-mobile'){
+        width: 100px;
+    }
+    @include respond-to('tablet'){
+        width: 150px;
+    }
+    @include respond-to('desktop'){
+        width: auto;
+    }
+}
+
+#input-container .grid-container{
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    grid-column-gap: 2em;
+}
+
+#input-container .launch-mission{
+    text-align: center;
+}
+
+#list-container .mat-card{
+    margin-bottom:2px;
+    padding: 0;
+}
+
+#list-container .grid-container {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 60px;
+    align-items: center;
+    justify-items: center;
+    font-weight: 700;
+}
+
+#list-container img{
+    height: 3em;
+    width: auto;
+}
+
+#list-container .delete-icon:hover{
+    color: red;
+}

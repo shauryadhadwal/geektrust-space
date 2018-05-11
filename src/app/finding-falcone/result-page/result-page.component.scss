@@ -1,0 +1,37 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins.scss';
+#result-container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    margin-top: -$header-height;
+    text-align: center;
+}
+
+#result-container .heading {
+    width: 100%;
+    font-weight: 900;
+    text-shadow: 0 0 8px hsl(43, 74%, 49%);
+    @include respond-to('small') {
+        font-size: 2.5em;
+    }
+    @include respond-to('mobile') {
+        font-size: 2.5em;
+    }
+    @include respond-to('tablet') {
+        font-size: 4em;
+    }
+}
+
+#result-container .mat-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 15px;
+    padding: 0;
+}
+
+#result-container .mat-card img{
+    width: 50px;
+}

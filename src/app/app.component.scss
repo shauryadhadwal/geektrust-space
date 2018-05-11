@@ -1,0 +1,29 @@
+@import '../sass/variables.scss';
+@import '../sass/mixins.scss';
+
+#main-container {
+    position: relative;
+    top: 0;
+    left:0;
+    min-height: 100%;
+    padding-top: $header-height;
+    padding-bottom: $footer-height;
+}
+
+#router-container {
+    @include respond-to('xs'){
+        max-width: 100%;
+    }
+    @include respond-to('mobile'){
+        max-width: 95%;
+    }
+    @include respond-to('tablet'){
+        max-width: 80%;
+    }
+    @include respond-to('desktop'){
+        max-width: 60%;
+    }
+
+    @include margin-auto;
+    min-height: 100%;
+}

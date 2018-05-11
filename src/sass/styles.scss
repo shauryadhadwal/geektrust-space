@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i);
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './variables.scss';
+// App 
+html,
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Roboto;
+    color: hsl(0, 0%, 96%);
+    background-image: url('../assets/app-bg.jpg'), linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    ;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid #555555;
+}
