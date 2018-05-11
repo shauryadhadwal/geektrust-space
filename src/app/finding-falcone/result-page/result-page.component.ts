@@ -8,8 +8,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ResultPageComponent implements OnInit {
 
-    private planet: string;
-    private status: boolean;
+    public planet: string;
+    public status: boolean;
 
     constructor(
         private router: Router,
